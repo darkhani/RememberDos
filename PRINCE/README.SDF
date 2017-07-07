@@ -1,0 +1,77 @@
+
+		  ฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+			  SOURCER DEFINITION FILE
+		  ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+
+ ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ Section 1: CONTROL INFORMATION   ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+
+Analysis Options = a b c d e f g h i j k l m n o p q r s t u v w x y z
+uP		 = 8088
+File format	 = ASM
+Label type	 = Decimal
+Remarks		 = All
+Target Assembler = TASM-2.X
+Input filename	 = README.COM
+Code style	 = Com
+Header		 = MEMORY$ made for a manipulation
+Drive (output)	 = C
+Output filename	 = README.ASM
+Passes		 = 5
+Xref		 = OFF
+
+
+
+ ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ Section 2: RANGE DEFINITION      ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+
+ ออออ Segments ออออออออออออออออออออออออออ
+
+  begin      end      default      seg   seg     seg
+ seg:off     off     ds	    es     type  size    value
+ -------     ----    ----   ----   ----- -----   -----
+seg_a:0100   05FA    seg_a  seg_a  auto  use16   ; 40C6
+
+ ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ Section 3: REFERENCE DEFINITIONS ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+
+ ออออ Subroutines อออออออออออออออออออออออ
+  seg:off   type & options      label          comments
+  -------   --------------      -------------- --------------
+
+ ออออ Locations	อออออออออออออออออออออออออ
+  seg:off   type & options      label          comments
+  -------   --------------      -------------- --------------
+0036:0000   loc					; loc_1
+seg_a:0100  loc, far	        start
+seg_a:0495  loc					; loc_6
+seg_a:049B  loc					; loc_8
+seg_a:049E  loc					; loc_9
+seg_a:04A0  forced, od B800
+seg_a:04A3  forced, od seg_a
+seg_a:04A6  loc					; loc_11
+seg_a:04B9  loc					; loc_13
+seg_a:04CC  loc					; loc_14
+seg_a:0522  forced, od seg_a
+seg_a:052A  loc					; loc_16
+seg_a:052B  forced, od seg_a
+seg_a:056D  forced, od seg_a
+seg_a:0572  loc					; locloop_18
+seg_a:0581  loc					; loc_19
+seg_a:058C  forced, od seg_a
+seg_a:058C  loc					; loc_20
+seg_a:05B0  loc					; loc_21
+seg_a:05BB  loc					; loc_22
+seg_a:05C6  loc					; loc_23
+seg_a:05D4  loc					; loc_24
+seg_a:05DE  loc					; loc_25
+
+ ออออ Data Items ออออออออออออออออออออออออ
+  seg:off   type & options      label          comments
+  -------   --------------      -------------- --------------
+0000:0463   dw,	equ				; data_1e
+seg_psp:0000  db, equ				; data_2e
+seg_psp:0009  db, equ				; data_4e
+seg_psp:0022  db, equ				; data_5e
+seg_psp:00E0  db, equ				; data_6e
+seg_a:0112  da,	r 7				; data_7
+seg_a:011C  dw					; data_8
+seg_a:0129  dw					; data_10
+B800:0000   db,	equ				; data_22e
